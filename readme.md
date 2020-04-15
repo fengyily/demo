@@ -76,3 +76,22 @@ select d.StudentId,e.StudentName,d.Score from (
 where d.StudentId = e.StudentId 
 and d.rId <= ceiling(@rowNum * 0.1)
 ```
+
+> ### 第三题：程序题
+```
+1、做了简化，没有考虑长方体方位，也就是说所生成的长方体的边，都是与x,y z轴平行；
+2、定义长方体 8 个点分为上、下各 4 点，下边：A1-A4；上边为：B1-B4，详见demo01.jpeg
+3、开发环境为：Mac，已在测试Ubuntu18.04系统中测试、运行通过；
+4、开发工具为：VSCode
+5、Sdk版本：3.1.200；
+```
+> ### 测试方法
+```
+> git clone https://github.com/fengyily/demo.git
+> cd demo
+> dotnet restore
+// 测试两个长方体相交
+> dotnet run test
+// 测试随机 5 个长方体相交
+> dotnet run
+```

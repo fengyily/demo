@@ -128,13 +128,13 @@ namespace demo
             if (CheckPoint(this, c.A1)) {
                 // 计算相交正方体
                 // 形态一致相交部份也是一个正方体
-                Console.WriteLine("c.A1是在 长方体内");
+                //Console.WriteLine("c.A1是在 长方体内");
                 return intersect(this, c);
             } else if (CheckPoint(c, this.A1)) {
-                Console.WriteLine("this.A1否在 长方体内");
+                //Console.WriteLine("this.A1否在 长方体内");
                 return intersect(c, this);
             }
-
+            Console.WriteLine("c.A1不在长方体内，不相交");
             // 说明A1点不在长方体内，不相交
             return null;
         }
@@ -149,7 +149,7 @@ namespace demo
             int w = a.A2.X > b.A2.X ? b.A2.X - b.A1.X : a.A2.X - a.A1.X;
             int l = a.A4.Y > b.A4.Y ? b.A4.Y - b.A1.Y : a.A4.Y - a.A1.Y;
             int h = a.B2.Z > b.B2.Z ? b.B2.Z - b.A1.Z : a.B2.Z - a.A1.Z;
-            Console.WriteLine("相交的长方体：w:{0},l:{1},h:{2}", w, l, h);
+            Console.WriteLine("相交的长方体：l:{0},w:{1},h:{2}", l, w, h);
             Cuboid newCub = new Cuboid(b.A1, l, w, h);
 
             newCub.Pring();
