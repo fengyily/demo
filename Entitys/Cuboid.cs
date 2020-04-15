@@ -28,13 +28,14 @@ namespace demo
 
 
         /// <summary>
-        /// 
+        /// 生成随机的一个长方体
         /// </summary>
         public Cuboid() {
             Random r = new Random();
             this.length = r.Next(1, 100);
             this.width = r.Next(1, 100);
             this.height = r.Next(1, 100);
+            // 根据指定长、宽、高来随机生成一个起点
             A1 = new Point(width, length, height);
             init();
         }
@@ -127,7 +128,6 @@ namespace demo
             if (CheckPoint(this, c.A1)) {
                 // 计算相交正方体
                 // 形态一致相交部份也是一个正方体
-
                 Console.WriteLine("c.A1是在 长方体内");
                 return intersect(this, c);
             } else if (CheckPoint(c, this.A1)) {
@@ -159,7 +159,7 @@ namespace demo
         public string Calc() {
             return $"体积为：{height} * {width} * {length} = " + (height * width * length);
         }
-        
+
         /// <summary>
         /// 检查点是否存在于正方体中
         /// </summary>
@@ -180,15 +180,15 @@ namespace demo
         }
         public void Pring() {
             Console.WriteLine($"长方体的：长：{length},宽：{width},高：{height}");
-            Console.WriteLine(A1.ToString());
-            Console.WriteLine(A2.ToString());
-            Console.WriteLine(A3.ToString());
-            Console.WriteLine(A4.ToString());
+            Console.WriteLine("A1:" + A1.ToString());
+            Console.WriteLine("A2:" + A2.ToString());
+            Console.WriteLine("A3:" + A3.ToString());
+            Console.WriteLine("A4:" + A4.ToString());
 
-            Console.WriteLine(B1.ToString());
-            Console.WriteLine(B2.ToString());
-            Console.WriteLine(B3.ToString());
-            Console.WriteLine(B4.ToString());
+            Console.WriteLine("B1:" + B1.ToString());
+            Console.WriteLine("B2:" + B2.ToString());
+            Console.WriteLine("B3:" + B3.ToString());
+            Console.WriteLine("B4:" + B4.ToString());
         }
     }
 }
