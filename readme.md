@@ -87,6 +87,7 @@ and d.rId <= ceiling(@rowNum * 0.1)
 ```
 > ### 测试方法
 > 为避免权限问题，已将项目开放，直接采用以下步骤即可测试
+> 注：mac ubuntu 可能要加sudo
 ```
 > git clone https://github.com/fengyily/demo.git
 > cd demo
