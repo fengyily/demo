@@ -157,8 +157,9 @@ namespace demo
         }
 
         public string Calc() {
-            return $"{height} * {width} * {length} = " + (height * width * length);
+            return $"体积为：{height} * {width} * {length} = " + (height * width * length);
         }
+        
         /// <summary>
         /// 检查点是否存在于正方体中
         /// </summary>

@@ -4,3 +4,5 @@ bin/*
 *.dll
 obj/Debug/netcoreapp3.1/demo.pdb
 obj/Debug/netcoreapp3.1/demo.dll
+bin/*
+
