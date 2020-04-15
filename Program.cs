@@ -10,10 +10,9 @@ namespace demo
         {
             // 随机数生成
             // 暂不考虑复杂情况，仅生成角度一致、大小不一的长方体
-            
             List<Cuboid> list = new List<Cuboid>();
             Cuboid c = new Cuboid();
-            for (int i = 0; i < 2; i ++) {
+            for (int i = 0; i < 5; i ++) {
                 Cuboid c1 = new Cuboid(c.A1);
                 list.Add(c1);
                 c1.Pring();

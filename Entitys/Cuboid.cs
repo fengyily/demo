@@ -77,9 +77,9 @@ namespace demo
         /// <param name="height"></param>
         public Cuboid(Point point) {
             Random r = new Random();
-            this.length = r.Next(1, 100);
-            this.width = r.Next(1, 100);
-            this.height = r.Next(1, 100);
+            this.length = r.Next(1, 100 - point.Y);
+            this.width = r.Next(1, 100 - point.X);
+            this.height = r.Next(1, 100 - point.Z);
             A1 = point;
             init();
         }
@@ -91,14 +91,14 @@ namespace demo
             A2.Z = A1.Z;
 
             //确定A3
-            A3.X = A2.X;
+            A3.X = A1.X + width;
             A3.Y = A1.Y + length;
             A3.Z = A1.Z;
 
             //确定A4
             A4.X = A1.X;
             A4.Y = A1.Y + length;
-            A4.Z = A3.Z;
+            A4.Z = A1.Z;
 
             B1.X = A1.X;
             B1.Y = A1.Y;
@@ -140,16 +140,16 @@ namespace demo
         }
 
         /// <summary>
-        /// 
+        /// 获取相交部份的长方体
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns></returns>
         private Cuboid intersect(Cuboid a, Cuboid b) {
-            int w = a.A2.X > b.A2.X ? a.A2.X - b.A1.X : b.A2.X - a.A1.X;
-            int l = a.A4.Y > b.A4.Y ? a.A4.Y - b.A1.Y : b.A4.Y - a.A1.Y;
-            int h = a.B2.Z > b.B2.Z ? a.B2.Z - b.A1.Z : b.B2.Z - a.A1.Z;
-
+            int w = a.A2.X > b.A2.X ? b.A2.X - b.A1.X : a.A2.X - a.A1.X;
+            int l = a.A4.Y > b.A4.Y ? b.A4.Y - b.A1.Y : a.A4.Y - a.A1.Y;
+            int h = a.B2.Z > b.B2.Z ? b.B2.Z - b.A1.Z : a.B2.Z - a.A1.Z;
+            Console.WriteLine("相交的长方体：w:{0},l:{1},h:{2}", w, l, h);
             Cuboid newCub = new Cuboid(b.A1, l, w, h);
 
             newCub.Pring();
